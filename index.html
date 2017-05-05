@@ -1,0 +1,278 @@
+<!-- 
+// - TEST PAWOON 2017 - Frontend 
+// - Hanya Static Page HTML, CSS Dan Beberapa fitur yang di validasikan menggunakan Javascript/Jquery
+// - Tidak Ada Proses untuk input data.
+// - Tidak Ada bagian yang di include, semua ada di dalam 1 page ini saja
+// - Author : Ega Aditya S
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pawoon Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<nav class="navbar-dark">
+		<div class="scroll-panel">
+			<ul class="nav">
+				<li class="nav-header">
+					<img src="images/logo.svg" class="img-responsive text-center">
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-archive"></i> <span class="nav-label">Laporan</span></a>
+				</li>
+				<li class="dropdown">
+					<a href="#"><span class="nav-label">Bisnis</span> <span class="arrow fa fa-angle-left"></span></a>
+					<ul class="dropdown-content">
+						<li><a href="#"><i class="fa fa-building-o"></i> <span class="nav-label">Profil Bisnis</span></a></li>
+						<li><a href="#"><i class="fa fa-building"></i> <span class="nav-label">Outlet</span></a></li>
+						<li><a href="#"><i class="fa fa-key"></i> <span class="nav-label">Lisensi Perangkat</span></a></li>
+						<li><a href="#"><i class="fa fa-users"></i> <span class="nav-label">Karyawan</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#"><span class="nav-label">Produk</span> <span class="arrow fa fa-angle-left"></span></a>
+					<ul class="dropdown-content">
+						<li id="manajemen_produk"><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Manajemen Produk</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Promo & Diskon</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#"><span class="nav-label">Inventori</span> <span class="arrow fa fa-angle-left"></span></a>
+					<ul class="dropdown-content">
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Stok Masuk</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Stok Keluar</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Stok Opname</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Transfer Stok</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Supplier</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Purchase Order</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Stok Keluar</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#"><span class="nav-label">Marketing</span> <span class="arrow fa fa-angle-left"></span></a>
+					<ul class="dropdown-content">
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Performa Marketing</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Pelanggan</span></a></li>
+						<li><a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Aplikasi Pelanggan</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="page-wrapper" class="white-bg">
+		<nav class="navbar navbar-static-top white-bg">
+			<div class="col-md-3 col-xs-12 navbar-header">
+				<div class="label-default">29 Hari Lagi Trial Berakhir</div>
+			</div>
+			<ul class="col-md-9 col-xs-12 navbar-top-links navbar-right">
+				<li><a href="#"><i class="fa fa-gift"></i>Program Referal</a></li>
+				<li class="dropdown-top-link">
+					<a href="#"><i class="notification fa fa-bell"><span>2</span></i>Irfan Rosandi <span class="arrow fa fa-sort-down"></span></a>
+					<ul class="dropdown-top-link-content">
+						<li><a href="#"><i class="fa fa-user"></i>Profile</a></li>
+						<li><a href="#"><i class="fa fa-sign-out"></i>Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="wrapper wrapper-content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumb">
+						<ol>
+							<li>Manajemen Produk</li>
+							<li>Tambah Produk</li>
+						</ol>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<h3>Tambah Produk</h3>
+				</div>
+
+				<form action="" method="get" class="form-wrapper col-md-12">
+					<div class="col-md-12 no-padding">
+						<div class="col-md-2 no-padding">
+							<input type="file" name="imageUpload" id="imageUpload" class="hide" />
+							<label for="imageUpload" class="btn btn-large img-upload img-responsive"></label>
+							<img id="imagePreview" src=" " class="img-responsive" /><br>
+							<div class="text-center">( Maksimal 1 Mb )</div><br>
+							<span id="changeImage" class="btn btn-custom btn-block">Remove Image</span><br>
+						</div>
+						<div class="col-md-10 form-group validate">
+							<label for="nama_produk">Nama Produk</label>
+							<input data-id="nama_produk" id="nama_produk" type="text" name="nama_produk" class="form-control" style="width: 60%;">
+						</div>
+						<div class="col-md-10 form-group validate">
+							<label for="kategori">Kategori</label>
+							<select data-id="kategori" id="kategori" name="kategori" class="form-control" style="width: 60%;">
+								<option></option>
+								<option value="kategori1">Kategori 1</option>
+							</select>
+						</div>
+						<div class="col-md-10 form-group validate">
+							<label for="harga_jual">Harga Jual</label>
+							<input data-id="harga_jual" id="harga_jual" type="text" name="harga_jual" class="form-control" style="width: 60%;">
+						</div>
+					</div>
+
+					<div class="col-md-12 ibox-content">
+						<div class="row">
+							<div class="ibox-title bar-wrapper im-ibox-1">
+								<h6 class="title">Section 2</h6>
+								<div class="ibox-tools">
+									<a class="collapse-link">
+										<i class="fa fa-chevron-up"></i>
+									</a>
+								</div>
+							</div>
+
+							<div class="col-md-12 ibox-content-1">
+								<div class="row">
+									<div class="col-md-10 col-md-offset-2 form-group">
+										<div><label >Produk Ini Dijual</label></div>
+										<input type="radio" name="radio_name">Ya
+										<input type="radio" name="radio_name">Tidak
+									</div>
+
+									<div class="col-md-10 col-md-offset-2 form-group validate">
+										<label for="sku">SKU</label> (<span class="modalInfo">Apa Ini ?</span>)
+										<input data-id="sku" id="sku" type="text" name="sku" class="form-control" style="width: 60%;">
+									</div>
+
+									<div class="col-md-10 col-md-offset-2 form-group validate">
+										<label for="barcode">Barcode</label>
+										<input data-id="barcode" id="barcode" type="text" name="barcode" class="form-control" style="width: 60%;">
+									</div>
+
+									<div class="col-md-10 col-md-offset-2 form-group validate">
+										<label for="harga_beli">Harga Beli</label>
+										<input data-id="harga_beli" id="harga_beli" type="text" name="harga_beli" class="form-control" style="width: 60%;">
+									</div>
+
+									<div class="col-md-10 col-md-offset-2 form-group validate">
+										<label for="pajak">Pajak</label>
+										<select data-id="pajak" id="pajak" name="pajak" class="form-control" style="width: 60%;">
+											<option></option>
+											<option value="pajak A">Pajak A</option>
+										</select>
+									</div>
+
+									<div class="col-md-10 col-md-offset-2 form-group validate">
+										<label for="deskripsi_produk">Deskripsi Produk</label>
+										<textarea data-id="deskripsi_produk" id="deskripsi_produk" type="text" name="deskripsi_produk" class="form-control" rows="6" style="width: 60%;"></textarea>
+									</div>
+
+									<div class="col-md-6 col-md-offset-2">
+										<div class="white-bg option-wrapper clearfix">
+											<div class="col-md-9 no-padding form-group">
+												<label>Varian Produk</label>
+												<small>Apakah produk ini memiliki varian seperti warna dan ukuran ?</small>
+											</div>
+											<div class="col-md-12 no-padding">
+												<a href="#" class="btn btn-custom btnOption varian">Varian Produk</a>
+												<div id="varian" class="switcher">
+													<span></span><small></small>
+												</div>
+											</div>
+
+											<div class="col-md-9 no-padding form-group">
+												<label>Opsi Tambahan</label>
+												<small>Apakah produk ini memiliki opsi tambahan yang dapat di pesan ?</small>
+											</div>
+											<div class="col-md-12 no-padding">
+												<a href="#" class="btn btn-custom btnOption opsi">Opsi Tambahan</a>
+												<div id="opsi" class="switcher">
+													<span></span><small></small>
+												</div>
+											</div>
+
+											<div class="col-md-9 no-padding form-group">
+												<label>Bahan Baku</label>
+												<small>Apakah anda ingin mengelola bahan baku anda ?</small>
+											</div>
+											<div class="col-md-12 no-padding">
+												<a href="#" class="btn btn-custom btnOption bahan_baku" data-val="bahan_baku">Bahan Baku</a>
+												<div id="bahan_baku" class="switcher">
+													<span></span><small></small>
+												</div>
+											</div>
+
+											<div class="col-md-9 no-padding form-group">
+												<label>Stok</label>
+												<small>Apakah anda ingin mengelola stok produk ini ?</small>
+											</div>
+											<div class="col-md-12 no-padding switch">
+												<a href="#" class="btn btn-custom btnOption stok">Stok</a>
+												<div id="stok" class="switcher">
+													<span></span><small></small>
+												</div>
+											</div>
+										</div><!--option-wrapper-->
+										<a href="#" class="btn btn-custom btn-block">Pengaturan Harga & Status Jual</a>
+									</div><!--col-md-6-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-12 btn-submit">
+						<button type="submit" class="btn btn-custom-blue-bg" id="buttonSubmit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">              
+				<div class="modal-header text-right">
+					<a href="javascript:void(0)" class="close-modal" data-dismiss="modal"><i class="fa fa-times"></i></a>
+				</div>
+				<div class="modal-body">
+					<div class="box-wrapper">
+						<p><strong>SKU Adalah:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script> -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#manajemen_produk").addClass("active");
+		$('.im-ibox-1').click(function() {
+			$('.ibox-content-1').stop().slideToggle(600);
+			$("i", this).toggleClass("fa-chevron-up fa-chevron-down");
+			$('html, body').animate({scrollBotom: 0}, 100);
+		})
+
+		$(function() {
+			$('.modalInfo').on('click', function() {
+				$('#modalInfo').modal('show');   
+			});		
+		});
+
+		$('.dropdown-top-link').click(function() {
+			$('.dropdown-top-link-content').stop().slideToggle(400);
+		});
+
+	});
+</script>
+</html>
